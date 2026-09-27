@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Happy Birthday🎂</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="decor decor1">✨</div>
+	<div class="decor decor2">❤️</div>
+	<div class="decor decor3">⭐</div>
+	<div class="decor decor4">💖</div>
+
+	<section class="page active">
+		<div class="icon">🎀</div>
+		<h1>Happy<br>Birthday!</h1>
+		<p class="subtitle">
+			Ada sesuatu yang spesial<br>buat kamu hari ini.
+		</p>
+
+		<button onclick="nextPage()">
+			Buka pesan 💌
+		</button>
+	</section>
+
+	<section class="page">
+		<div class="icon">🌷</div>
+
+		<h2>Special for YOU</h2>
+
+		<p>
+			Semoga di umur yang baru ini, kamu selalu diberikan kesehatan, kebahagiaan, dan banyak hal baik.
+		</p>
+
+		<p>
+			Semoga semua yang kamu impikan perlahan-lahan bissa menjadi kenyataan.
+		</p>
+
+		<div class="buttons">
+			<button onclick="prevPage()">←Kembali</button>
+			<button onclick="nextPage()">Lanjut→</button>
+		</div>
+	</section>
+
+	<section class="page">
+		<div class="icon">💌</div>
+
+		<h2>Pesan Untukmu</h2>
+
+		<p>
+			Terima kasih sudah mennjadi seseorang yang hebat selama ini.
+		</p>
+
+		<p>
+			Jangan lupa untuk selalu tersenyum, menikmati setiap perjalanan, dan menghargai hal-hal kecil yang membuatmu bahagia.
+		</p>
+
+		<div class="buttons">
+			<button onclick="prevPage()">←Kembali</button>
+			<button onclick="nextPage()">Lanjut→</button>
+		</div>
+	</section>
+
+	<section class="page cake-page">
+		<div class="icon">🎁</div>
+		<h2>Somthing Special...</h2>
+
+		<p>
+			Klik kuenya uuntuk melihat kejutan kecil 🎂
+		</p>
+
+		<div class="cake" onclick="cutCake()">
+			
+			<div class="candle">
+				<div class="flame">🔥</div>
+			</div>
+
+			<div class="cake-top"></div>
+			<div class="cake-body"></div>
+		</div>
+
+		<p id="cakeMessage"></p>
+
+		<div class="buttons">
+			<button onclick="nextPage">←Kembali</button>
+		</div>
+	</section>
+
+	<script src="script.js"></script>
+</body>
+</html>

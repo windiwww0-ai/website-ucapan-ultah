@@ -1,0 +1,308 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	background: #101827;
+	color: #f5f1e8;
+	font-family: Georgia, serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+body:before{
+	content: "";
+	position: fixed;
+	width: 450px;
+	height: 450px;
+	background: rgba(210, 180, 100, 0.08);
+	border-radius: 50%;
+	filter: blur(100px);
+	top: -180px;
+	left: -150px;
+	animation: floating 7s infinite ease-in-out;
+}
+
+body:after{
+	content: "";
+	position: fixed;
+	width: 400px;
+	height: 400px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 50%;
+	filter: blur(100px);
+	bottom: -150px;
+	right: -150px;
+	animation: floating 9s infinite ease-in-out reverse;
+}
+
+.page{
+	position: absolute;
+	width: min(700px, 90%);
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(40px) scale(0.97);
+	transition: 
+		opacity 0.6s ease,
+		transform 0.6s ease,
+		visibility 0.6s;
+	z-index: 2;
+}
+
+.page.active{
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(0) scale(1);
+}
+
+.icon{
+	font-size: 60px;
+	margin-bottom: 20px;
+	animation: cuteFloat 3s ease-in-out infinite;
+}
+
+h1{
+	color: #e8ca78;
+	font-size: clamp(3rem, 8vw, 55rem);
+	line-height: 0.95;
+	letter-spacing: 3px;
+	margin-bottom: 30px;
+	animation: tittleAppear 1s ease;
+}
+
+h2{
+	color: #e8ca78;
+	font-size: clamp(2rem, 5vw, 3rem);
+	margin-bottom: 30px;
+}
+
+p{
+	color: #d7dce5;
+	font-size: 1.05rem;
+	line-height: 1.9;
+	max-width: 600px;
+	margin: 15px auto;
+}
+
+.subtitle{
+	color: #bfc6d2;
+}
+
+button{
+	margin-top: 25px;
+	padding: 13px 25px;
+	border: 13px 25px;
+	border-radius: 30px;
+	background: rgba(232, 202, 120, 0.08);
+	color: #e8ca78;
+	font-family: Georgia, serif;
+	font-size: 15px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+button:hover{
+	background: #e8ca78;
+	color: #101827;
+	transform: translateY(-4px);
+	box-shadow: 0 10px 30px rgba(232, 202, 120, 0.2);
+}
+
+.buttons{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 25px;
+}
+
+.buttons button{
+	margin-top: 0;
+}
+
+.decor{
+	position: fixed;
+	color: #e8ca78;
+	opacity: 0.35;
+	font-size: 25px;
+	z-index: 1;
+	animation: floating 4s ease-in-out infinite;
+}
+
+.decor1{
+	top: 15%;
+	left: 12%;
+}
+
+.decor2{
+	top: 25%;
+	right: 15%;
+	animation-delay: 1s;
+}
+
+.decor3{
+	bottom: 20%;
+	left: 18%;
+	animation-delay: 2s;
+}
+
+.decor4{
+	bottom: 15%;
+	right: 12%;
+	animation-delay: 15s;
+}
+
+.cake-page{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cake{
+	position: relative;
+	width: 180px;
+	height: 150px;
+	margin: 30px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.cake:hover{
+	transform: scale(1.08);
+}
+
+.cake-body{
+	position: absolute;
+	width: 160px;
+	height: 80px;
+	left: 10px;
+	bottom: 10px;
+	background: #d9a66f;
+	border-radius: 12px 12px 20px 20px;
+	box-shadow: 
+		inset 0 -15px rgba(120, 70, 40, 0.15),
+		0 15px 30px rgba(0, 0, 0, 0.25)
+}
+
+.cake-top{
+	position: absolute;
+	width: 170px;
+	height: 35px;
+	left: 5px;
+	bottom: 75px;
+	background: #f4e4c1;
+	border-radius: 50%;
+	z-index: 2;
+	box-shadow: 0 5px 0 #d9a66f;
+}
+
+.candle{
+	position: absolute;
+	width: 15px;
+	height: 55px;
+	background: #e8ca78;
+	left: 82px;
+	bottom: 105px;
+	border-radius: 5px;
+	z-index: 4;
+}
+
+.flame {
+    position: absolute;
+
+    top: -30px;
+
+    left: -9px;
+
+    font-size: 23px;
+    line-height: 1;
+    z-index: 5;
+
+    animation: flame 0.7s infinite alternate;
+}
+
+#cakeMessage {
+    color: #e8ca78;
+
+    min-height: 30px;
+
+    font-size: 1.1rem;
+
+    transition: 0.4s;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes cuteFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flame {
+
+    from {
+        transform: scale(0.9) rotate(-3deg);
+    }
+
+    to {
+        transform: scale(1.1) rotate(3deg);
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .icon {
+        font-size: 50px;
+    }
+
+    .cake {
+        transform: scale(0.9);
+    }
+
+    .cake:hover {
+        transform: scale(0.95);
+    }
+}
